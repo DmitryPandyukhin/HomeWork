@@ -4,9 +4,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeManager"
-        mc:Ignorable="d"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Bottom" MinHeight="40" Background="Green" MaxHeight="50" Orientation="Horizontal">
+                <Button Margin="5 5 5 5" MinWidth="50">Start</Button>
+                <Button Margin="5 5 5 5" MinWidth="50">Pause</Button>
+                <Button Margin="5 5 5 5" MinWidth="50">Stop</Button>
+            </StackPanel>
+            <TabControl>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Height="10" Width="10" Fill="Black" />
+                            <TextBlock Margin="3">Time management</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel DockPanel.Dock="Left">
+                            <TextBlock>
+                             Таймер
+                            <LineBreak />
+                            задачи
+                            </TextBlock>
+                            <Label MinWidth="55">22:22:22</Label>
+                        </StackPanel>
+                        <ListView DockPanel.Dock="Left" MaxWidth="600" Name="tasksList" ItemsSource="{DynamicResource ResourceKey=tasks}" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}" Width="300">Задача</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Time}" Width="110">Время выполнения</GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                            <ListView.Resources>
+                                <col:ArrayList x:Key="tasks">
+                                    <local:Task Title="Задача 1" Time= "10" />
+                                    <local:Task Title="Задача 2" Time= "10" />
+                                    <local:Task Title="Задача 3" Time= "10" />
+                                </col:ArrayList>
+                            </ListView.Resources>
+                        </ListView>
+                        <GroupBox Header="Редактирование" Padding="5">
+                            <StackPanel>
+                                <TextBlock>Задача</TextBlock>
+                                <TextBox></TextBox>
+                                <TextBlock>Время выполнения</TextBlock>
+                                <TextBox></TextBox>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Margin="5 5 5 5" MinWidth="70">Add</Button>
+                                    <Button Margin="5 5 5 5" MinWidth="70">Edit</Button>
+                                    <Button Margin="5 5 5 5" MinWidth="70">Delete</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
     </Grid>
 </Window>
