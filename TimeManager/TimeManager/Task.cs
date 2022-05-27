@@ -9,7 +9,7 @@ namespace TimeManager
     public class Task
     {
         public string Title { get; set; }
-        // Время в минутах
+        // Время в секундах
         public int Time { get; set; }
         public Task()
         {
