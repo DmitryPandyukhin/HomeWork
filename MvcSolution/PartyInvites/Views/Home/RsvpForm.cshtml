@@ -9,33 +9,44 @@
 <html>
 <head>
     <meta name="viewport" content="width-device-width" />
-    <title>RsvpForm</title>
+    <title>Форма анкеты</title>
     <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" 
+        />
 </head>
 <body>
-    <form asp-action="RsvpForm" method="post">
-        <div asp-validation-summary="All"></div>
-        <p>
-            <label asp-for="Name">Имя:</label>
-            <input asp-for="Name" />
-        </p>
-        <p>
-            <label asp-for="Email">Email:</label>
-            <input asp-for="Email" />
-        </p>
-        <p>
-            <label asp-for="Phone">Телефон:</label>
-            <input asp-for="Phone" />
-        </p>
-        <p>
-            <label>Подтверждаете участие?</label>
-            <select asp-for="WillAttend">
-                 <option value="">Выберите ответ</option>
-                 <option value="true">Подтверждаю</option>
-                 <option value="false">Отказваюсь</option>
-            </select>
-        </p>
-        <button type="submit">Отправить анкету</button>
-    </form>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Анкета</h4></div>
+            <div class="panel-body">
+                <form class="p-a-1" asp-action="RsvpForm" method="post">
+                    <div asp-validation-summary="All"></div>
+                    <div class="form-group">
+                        <label asp-for="Name">Имя:</label>
+                        <input class="form-control" asp-for="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email:</label>
+                        <input class="form-control" asp-for="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Phone">Телефон:</label>
+                        <input class="form-control" asp-for="Phone" />
+                    </div>
+                    <div class="form-group">
+                        <label>Подтверждаете участие?</label>
+                        <select class="form-control" asp-for="WillAttend">
+                            <option value="">Выберите ответ</option>
+                            <option value="true">Подтверждаю</option>
+                            <option value="false">Отказваюсь</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit">
+                            Отправить анкету
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </div>
 </body>
 </html>
