@@ -9,9 +9,11 @@
 <html>
 <head>
     <meta name="viewport" content="width-device-width" />
-    <title>Thanks</title>
+    <title>Благодарность</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"
+          />
 </head>
-<body>
+<body class="text-center">
     <p>
         <h1>Спасибо, @Model.Name!</h1>
         @if (Model.WillAttend == true)
@@ -22,6 +24,6 @@
             @:Жаль, что вы не можете придти. Извините за беспокойство.
         }
     </p>
-    <p>Нажмите <a asp-action="ListResponses">сюда</a> чтобы увидеть список участников.</p>
+    <p>Нажмите <a class="nav-link" asp-action="ListResponses">сюда</a> чтобы увидеть список участников.</p>
 </body>
 </html>
