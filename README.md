@@ -4,4 +4,5 @@
 ## Структура репозитория
   * MvcSolution.sln - группирует проекты MVC.
     * PartyInvites.csproj - простое приложение для ввода данных.
+    * SportsStore.csproj - онлайн-магазин товаров
     
