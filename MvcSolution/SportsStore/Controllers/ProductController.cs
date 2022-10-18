@@ -6,16 +6,14 @@ namespace SportsStore.Controllers
     public class ProductController : Controller
     {
         private IProductRepository repository;
-        // Для определения класса, используемого в списке, 
-        // MVC Обращается
-        // к конфигурации в классе Startup. Затем MVC создает список
-        // (сейчас это FakeRepository. Потом можно заменить.)
+        // При создании контроллера MVC создаст список,
+        // тип которого задан в классе Startup
+        // (сейчас это FakeRepository. Потом можно заменить.).
         public ProductController(IProductRepository repo)
         {
             repository = repo;
         }
-        // Вызываем представление по умолчанию 
-        // и передаем ему список.
+        // Выполняем метод действия по умолчанию
         public ViewResult List() => View(repository.Products);
     }
 }
