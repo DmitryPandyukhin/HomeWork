@@ -7,21 +7,31 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using SportsStore.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace SportsStore
 {
     public class Startup
     {
+        public IConfiguration Configuration;
+        public Startup(IConfiguration configuration) =>
+            Configuration = configuration;
         public void ConfigureServices(IServiceCollection services)
         {
+            // Настройка EF Core
+            // AddDbContext настраивает службы для контекста БД
+            // ApplicationDbContext одноименного класса.
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration["Data:SportsStoreProducts:" +
+                    "ConnectionString"]));
             // Регистрируем службу хранилища. Позволит контроллеру
             // получать реализующие интерфейс IProductRepository
             // объекты, не зная, какой класс используется.
-            // (Получать списки товаров. Класс в списке может быть 
-            // другой - наследник класса Product)
             // Таким образом реализуется слабосвязанность компонентов.
             services.AddTransient<IProductRepository,
-                FakeProductRepository>();
+                EFProductRepository>();
             // Настройка разделяемых объектов
             services.AddMvc();
         }
@@ -43,6 +53,7 @@ namespace SportsStore
                     name: "default",
                     template: "{controller=Product}/{action=List}/{id?}");
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
