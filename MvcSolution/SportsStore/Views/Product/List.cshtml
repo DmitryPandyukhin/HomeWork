@@ -1,10 +1,18 @@
-﻿@model IEnumerable<Product>
-
-@foreach (var p in Model)
-{
-    <div>
-        <h3>@p.Name</h3>
-        @p.Description
-        <h4>@p.Price.ToString("c")</h4>
+﻿@model ProductListViewModel
+@foreach (var p in Model.Products) {
+    <div class="card card-outline-primary m-1 р-1">
+        <div class="bg-faded р-1">
+            <h4>
+                @p.Name
+                <span class="badge badge-pill badge-primary" style="float: right">
+                    <small>@p.Price.ToString("c")</small>
+                </span>
+            </h4>
+        </div>
+        <div class="card-text р-1">@p.Description</div>
     </div>
 }
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabed="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     page-class-selected="Ьtn-primary" class="Ьtn-group pull-right m-1">
+</div>

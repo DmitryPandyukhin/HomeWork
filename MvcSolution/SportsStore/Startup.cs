@@ -47,6 +47,11 @@ namespace SportsStore
             // Включает инфраструктуру ASP.NET Core MVC
             app.UseMvc(routes => 
             {
+                routes.MapRoute(
+                    name: "paginaation",
+                    template: "Products/Page{productPage}",
+                    defaults: 
+                        new { Controller = "Product", action = "List" });
                 // Настраиваем маршрут. Этот метод действия будет вызываться
                 // по умолчанию (если в URL не указазано иное)
                 routes.MapRoute(

@@ -35,6 +35,20 @@ namespace SportsStore.Models
                         Description = "Размер и вес, одобренные ФИФА",
                         Category = "Футбол",
                         Price = 19.50m
+                    },
+                    new Product
+                    {
+                        Name = "Угловые флаги",
+                        Description = "Придайте своему игровому полю профессиональный вид",
+                        Category = "Футбол",
+                        Price = 34.95m
+                    },
+                    new Product
+                    {
+                        Name = "Стадион",
+                        Description = "Полноформатный стадион на 35 000 мест",
+                        Category = "Футбол",
+                        Price = 79500m
                     }
                 );
                 context.SaveChanges();
