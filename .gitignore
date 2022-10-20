@@ -1,0 +1,15 @@
+*.pdb
+*.cache
+*.g.cshtml.cs
+*.dtbcache
+*.deps.json
+*.runtimeconfig.dev.json
+*.runtimeconfig.json
+*.Views.dll
+*.csproj.CopyComplete
+*.csproj.CoreCompileInputs.cache
+*.csproj.FileListAbsolute.txt
+*.RazorTargetAssemblyInfo.cs
+*.Views.dll
+
+/MvcSolution/.vs
