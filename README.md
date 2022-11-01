@@ -5,4 +5,6 @@
   * MvcSolution.sln - группирует проекты MVC.
     * PartyInvites.csproj - простое приложение для ввода данных.
     * SportsStore.csproj - онлайн-магазин товаров
+  * OtherProjects.sln - группирует проекты, не отнесенные к категории.
+    * StartWork.csproj - быстрая загрузка рабочей среды
     
