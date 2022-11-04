@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace packt.shared
+namespace Packt.Shared
 {
     [Index("CompanyName", Name = "CompanyNameSuppliers")]
     [Index("PostalCode", Name = "PostalCodeSuppliers")]

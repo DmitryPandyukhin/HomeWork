@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace packt.shared
+namespace Packt.Shared
 {
     public partial class Northwind : DbContext
     {
