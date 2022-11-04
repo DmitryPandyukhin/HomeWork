@@ -5,7 +5,13 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloApp", "HelloApp\HelloApp.csproj", "{482AC307-9266-43FA-A1E7-2605798B5CDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{A10401DA-EE8C-447B-B85F-AA3170DBE562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{A10401DA-EE8C-447B-B85F-AA3170DBE562}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindEntitiesLib", "NorthwindEntitiesLib\NorthwindEntitiesLib.csproj", "{5899539C-43C6-4F52-AC09-260614E00C97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindContextLib", "NorthwindContextLib\NorthwindContextLib.csproj", "{203A2C2B-EBCE-45CD-925C-00ED275446B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindWeb", "NorthwindWeb\NorthwindWeb.csproj", "{C26B1DFF-95B5-4D1D-A207-8FEDD994C1B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A10401DA-EE8C-447B-B85F-AA3170DBE562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10401DA-EE8C-447B-B85F-AA3170DBE562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A10401DA-EE8C-447B-B85F-AA3170DBE562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5899539C-43C6-4F52-AC09-260614E00C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5899539C-43C6-4F52-AC09-260614E00C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5899539C-43C6-4F52-AC09-260614E00C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5899539C-43C6-4F52-AC09-260614E00C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203A2C2B-EBCE-45CD-925C-00ED275446B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203A2C2B-EBCE-45CD-925C-00ED275446B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203A2C2B-EBCE-45CD-925C-00ED275446B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203A2C2B-EBCE-45CD-925C-00ED275446B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26B1DFF-95B5-4D1D-A207-8FEDD994C1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26B1DFF-95B5-4D1D-A207-8FEDD994C1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26B1DFF-95B5-4D1D-A207-8FEDD994C1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26B1DFF-95B5-4D1D-A207-8FEDD994C1B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
