@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@page
+@functions
+{
+    public string DayName { get; set; } 
+    public void OnGet()
+    {
+        ViewData["Title"] = "Сайт Northwind";
+
+        Model.DayName = DateTime.Now.ToString("dddd");
+    }   
+}
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <!-- Обязательные метатеги -->
@@ -17,11 +28,10 @@
             <h1 class="display-3">Добро пожаловать в Northwind!</h1>
             <p class="lead">Мы поставляем продукцию нашим клиентам.</p>
             <hr/>
-            <h2>Это статическая HTML страница.</h2>
-            <p>Нашими клиентами являются рестораны, отели и туристические компании.</p>
+            <p>Сегодня @Model.DayName! Нашими клиентами являются рестораны, отели и туристические компании.</p>
             <p>
-                <a class="btn btn-primary"
-                   href="https://www.asp.net/">Узнать больше</a>
+                <a class="btn btn-primary" href="suppliers">
+                   Узнайте больше о наших поставщиках</a>
             </p>
         </div>
     </div>
