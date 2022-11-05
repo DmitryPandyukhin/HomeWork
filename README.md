@@ -5,9 +5,13 @@
   * MvcSolution.sln - группирует проекты MVC.
     * PartyInvites.csproj - простое приложение для ввода данных.
     * SportsStore.csproj - онлайн-магазин товаров
-  * ASPNETCore6.sln - группирует проекты ASP.NET Core6
-    * HelloApp.csproj - проект для изучения курса ASP.NET Core6
-    * WorkingWithEFCore.csproj - проект для изучения EF Core
-  * OtherProjects.sln - группирует проекты, не отнесенные к категории.
-    * StartWork.csproj - быстрая загрузка рабочей среды
+  * ASPNETCore6Razor.sln - группирует проекты Razor
+    * NorthwindWeb.csproj - сайта. СУБД SQlite. БД Northwond.db.
+    * NorthwindEntitiesLib.csproj - сущности EF Core.
+    * NorthwindContextLib.csproj - контекст EF Core.
+    * NorthwindEmployees.csproj - библиотека с частичным представлением.
+  * OtherProjects.sln - группирует проекты, неотнесенные к категории.
+    * StartWork.csproj - быстрая загрузка рабочей среды.
+    * WorkingWithEFCore.csproj - изучение EF Core.
+    * HelloApp.csproj - изучение ASP.NET Core.
     
