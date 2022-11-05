@@ -1,0 +1,44 @@
+﻿@page
+@functions
+{
+    public string DayName { get; set; } 
+    public void OnGet()
+    {
+        ViewData["Title"] = "Сайт Northwind";
+
+        Model.DayName = DateTime.Now.ToString("dddd");
+    }   
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+          crossorigin="anonymous">
+    <title>Добро пожаловать ASP.NET Core!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">Добро пожаловать в Northwind!</h1>
+            <p class="lead">Мы поставляем продукцию нашим клиентам.</p>
+            <hr/>
+            <p>Сегодня @Model.DayName! Нашими клиентами являются рестораны, отели и туристические компании.</p>
+            <p>
+                <a class="btn btn-primary" href="suppliers">
+                   Узнайте больше о наших поставщиках</a>
+            </p>
+            <p>
+                <a class="btn btn-primary" href="employees">
+                Свяжитесь с нашими сотрудниками
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "Hash": "30GG4C1abvfHd5+mi6YOxoFnuVe8qbVO/LMMkd+VY0o=",
+  "Source": "NorthwindWeb",
+  "BasePath": "_content/NorthwindWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\work\\repos\\HomeWork\\ASPNETCore6\\PracticalApps\\NorthwindEmployees\\NorthwindEmployees.csproj",
+      "Version": 2,
+      "Source": "NorthwindEmployees",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "NorthwindWeb\\wwwroot",
+      "Source": "NorthwindWeb",
+      "ContentRoot": "C:\\work\\repos\\HomeWork\\ASPNETCore6\\NorthwindWeb\\wwwroot\\",
+      "BasePath": "_content/NorthwindWeb",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
