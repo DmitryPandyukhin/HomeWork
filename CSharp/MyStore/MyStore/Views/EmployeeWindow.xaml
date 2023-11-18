@@ -1,0 +1,88 @@
+﻿<Window x:Class="MyStore.Views.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStore.Views"
+        mc:Ignorable="d"
+        Title="Сотрудник" Height="270" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" 
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self}, 
+                        Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5 5 0 2" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" 
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self}, 
+                        Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button IsDefault="True" Command="{ Binding OkCommand }">OK</Button>
+                <Button IsCancel="True" >Отмена</Button>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Фамилия:</Label>
+                    <TextBox Name="LastName" Text="{Binding Employee.LastName,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Имя:</Label>
+                    <TextBox Name="FirstName" Text="{Binding Employee.FirstName,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Отчество:</Label>
+                    <TextBox Name="MiddleName" Text="{Binding Employee.MiddleName}" ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Дата рождения:</Label>
+                    <DatePicker Name="BirthDate" SelectedDate="{Binding Employee.BirthDate,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ></DatePicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Пол:</Label>
+                    <ComboBox ItemsSource="{Binding Path=Sexs}" 
+                    SelectedItem="{Binding Path=SexItem}"
+                    />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Подразделение:</Label>
+                    <ComboBox ItemsSource="{Binding Path=Departaments}" 
+                    SelectedItem="{Binding Path=DepartamentItem}"
+                    DisplayMemberPath="Name"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

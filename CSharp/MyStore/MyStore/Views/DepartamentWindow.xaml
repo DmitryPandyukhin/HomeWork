@@ -1,0 +1,62 @@
+﻿<Window x:Class="MyStore.Views.DepartamentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStore.Views"
+        mc:Ignorable="d"
+        Title="Подразделение" Height="140" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" 
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self}, 
+                        Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5 5 0 2" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button IsDefault="True" Command="{ Binding OkCommand }">OK</Button>
+                <Button IsCancel="True" >Отмена</Button>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Название:</Label>
+                    <TextBox Name="Name" Text="{Binding Departament.Name,
+                        ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Руководитель:</Label>
+                    <ComboBox ItemsSource="{Binding Path=Employees}" 
+                        SelectedItem="{Binding Path=ManagerItem}"
+                        DisplayMemberPath="FullName"/>
+                </StackPanel>
+            </StackPanel>
+        
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="MyStore.Views.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyStore.Views"
+        xmlns:models="clr-namespace:MyStore.Models"
+        
+        mc:Ignorable="d"
+        Title="Заказ" Height="200" Width="300" WindowStartupLocation="CenterScreen">
+        <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" 
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self}, 
+                        Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="MinWidth" Value="170" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5 5 0 2" />
+        </Style>
+
+        <models:IntConverter x:Key="intConverter" />
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button IsDefault="True" Command="{ Binding OkCommand }" >OK</Button>
+                <Button IsCancel="True" >Отмена</Button>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Номер:</Label>
+                    <TextBox Name="TextBox1" Text="{Binding Order.Number,
+                        ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged,
+                        Converter={StaticResource intConverter}
+                        }"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110" >Название товара:</Label>
+                    <TextBox Name="TextBox2" Text="{Binding Order.ProductName}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110" >Сотрудник:</Label>
+                    <ComboBox ItemsSource="{Binding Path = Employees}" 
+                            SelectedItem="{Binding Path=EmployeeItem}"
+                            DisplayMemberPath="FullName"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label MinWidth="110">Теги:</Label>
+                    <TextBox Text="{Binding TagsStringEditable}" ToolTip="Слова и фразы разделяются запятыми."/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
